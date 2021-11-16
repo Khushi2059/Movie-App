@@ -6,13 +6,15 @@
     android:layout_height="match_parent"
     android:background="#2B304A"
     tools:context=".view.MovieDetails">
+
     <ImageView
         android:id="@+id/movie_image2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:alpha="0.2"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/ic_launcher_background"
-        android:alpha="0.2"/>
+        app:srcCompat="@drawable/ic_launcher_background" />
+
     <ImageView
         android:id="@+id/movie_image"
         android:layout_width="0dp"

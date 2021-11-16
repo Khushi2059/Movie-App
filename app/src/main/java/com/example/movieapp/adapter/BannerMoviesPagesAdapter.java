@@ -50,7 +50,7 @@ public class BannerMoviesPagesAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         View view= LayoutInflater.from(context).inflate(R.layout.banner_movie_layout,null);
-     final ImageView bannerImage=view.findViewById(R.id.banner_image);
+        final ImageView bannerImage=view.findViewById(R.id.banner_image);
         Glide.with(context).load("https://image.tmdb.org/t/p/original" + kidsBannerList.get(position).getPoster_path()).into(bannerImage);
         container.addView(view);
 
@@ -62,8 +62,8 @@ public class BannerMoviesPagesAdapter extends PagerAdapter {
                 i.putExtra("original_name", kidsBannerList.get(position).getOriginal_title());
                 i.putExtra("poster_path","https://image.tmdb.org/t/p/original"+ kidsBannerList.get(position).getPoster_path());
                 i.putExtra("movieFile", kidsBannerList.get(position).getVideo());
-context.startActivity(i);
-                 }
+                context.startActivity(i);
+            }
         });
 
         return view;

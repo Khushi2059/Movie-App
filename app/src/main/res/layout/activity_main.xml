@@ -7,91 +7,91 @@
     android:background="#2B304A"
     tools:context=".view.MainActivity" >
 
-   <TextView
-       android:id="@+id/textView"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:fontFamily="@font/bree_serif"
-       android:text="Movie App"
-       android:textColor="#ECE6E6"
-       android:textSize="30sp"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bree_serif"
+        android:text="Movie App"
+        android:textColor="#ECE6E6"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-   <com.google.android.material.tabs.TabLayout
-       android:id="@+id/tabLayout"
-       android:layout_width="0dp"
-       android:layout_height="wrap_content"
-       android:layout_marginStart="16dp"
-       android:layout_marginLeft="16dp"
-       android:layout_marginTop="24dp"
-       android:layout_marginEnd="16dp"
-       android:layout_marginRight="16dp"
-       app:tabBackground="@color/prime"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/textView"
-       app:tabIndicatorColor="#FFFFFF"
-       app:tabSelectedTextColor="#199EAF"
-       app:tabTextColor="#04648F">
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:tabBackground="@color/prime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:tabIndicatorColor="#FFFFFF"
+        app:tabSelectedTextColor="#199EAF"
+        app:tabTextColor="#04648F">
 
-      <com.google.android.material.tabs.TabItem
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Home" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home" />
 
-      <com.google.android.material.tabs.TabItem
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="TV Shows" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TV Shows" />
 
-      <com.google.android.material.tabs.TabItem
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Movies" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Movies" />
 
-      <com.google.android.material.tabs.TabItem
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Kids" />
-   </com.google.android.material.tabs.TabLayout>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kids" />
+    </com.google.android.material.tabs.TabLayout>
 
-   <RelativeLayout
-       android:id="@+id/relativeLayout"
-       android:layout_width="409dp"
-       android:layout_height="300dp"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/tabLayout">
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="409dp"
+        android:layout_height="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout">
 
-      <androidx.viewpager.widget.ViewPager
-          android:id="@+id/banner_viewPager"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent" />
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/banner_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-      <com.google.android.material.tabs.TabLayout
-          android:id="@+id/tab_indicator"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentBottom="true"
-          android:layout_centerInParent="true"
-          android:background="#0000ffff"
-          app:tabBackground="@drawable/indicator_selector"
-          app:tabIndicatorHeight="0dp"
-          app:tabMaxWidth="15dp" />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:background="#0000ffff"
+            app:tabBackground="@drawable/indicator_selector"
+            app:tabIndicatorHeight="0dp"
+            app:tabMaxWidth="15dp" />
 
-   </RelativeLayout>
+    </RelativeLayout>
 
-   <androidx.recyclerview.widget.RecyclerView
-       android:id="@+id/main_recycler"
-       android:layout_width="401dp"
-       android:layout_height="378dp"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.9"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-       app:layout_constraintVertical_bias="0.0"
-       android:layout_marginTop="20dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_recycler"
+        android:layout_width="401dp"
+        android:layout_height="378dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginTop="20dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
