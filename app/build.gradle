@@ -4,10 +4,17 @@ plugins {
 
 android {
     compileSdk 31
+<<<<<<< HEAD
     compileOptions{
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+=======
+compileOptions{
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+}
+>>>>>>> Initial commit
     defaultConfig {
         applicationId "com.example.movieapp"
         minSdk 16
@@ -54,6 +61,7 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
 
+<<<<<<< HEAD
 
     implementation 'com.google.android.exoplayer:exoplayer:2.9.6'
     implementation 'com.android.support:multidex:2.0.1'
@@ -61,4 +69,7 @@ dependencies {
     implementation 'com.daimajia.easing:library:2.0@aar'
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
 
+=======
+    implementation 'com.google.android.exoplayer:exoplayer:2.9.6'
+>>>>>>> Initial commit
 }

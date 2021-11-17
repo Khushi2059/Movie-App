@@ -12,6 +12,7 @@ import io.reactivex.Observable;
 import retrofit2.http.GET;
 
 public interface ApiInterface {
+<<<<<<< HEAD
     @GET("movie/popular?api_key=" + apiKey)
     Observable<MovieResp> getMovieResp();
 
@@ -25,3 +26,8 @@ public interface ApiInterface {
     Observable<KidsResp> getWatchNext();
 
 }
+=======
+  //  @GET("https://api.themoviedb.org/3/movie/top_rated?api_key=232be951f20b306084f1a1bcc66a1081");
+//    Observable<List<BannerMovies>> getAllBanners();
+}
+>>>>>>> Initial commit
