@@ -5,20 +5,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.movieapp.MainActivity;
 import com.example.movieapp.R;
 import com.example.movieapp.model.AllCategory;
 import com.example.movieapp.model.CategoryItem;
 
 import java.util.List;
 
-public class MainRecyclerAdapter extends RecyclerView.Adapter<MainRecyclerAdapter.MainViewHolder>{
+public class MainRecyclerAdapter  extends RecyclerView.Adapter<MainRecyclerAdapter.MainViewHolder>{
     Context context;
     List<AllCategory> allCategoryList;
 

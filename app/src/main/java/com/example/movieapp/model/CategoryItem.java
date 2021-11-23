@@ -2,15 +2,15 @@ package com.example.movieapp.model;
 
 public class CategoryItem {
     Integer id;
-    String movieName;
-    String imageUrl;
-    String fileUrl;
-    public CategoryItem(Integer id,String movieName,String imageUrl,String fileUrl)
+    String original_title;
+    String poster_path;
+    String video;
+    public CategoryItem(Integer id, String original_title, String poster_path, String video)
     {
         this.id=id;
-        this.movieName=movieName;
-        this.imageUrl=imageUrl;
-        this.fileUrl=fileUrl;
+        this.original_title = original_title;
+        this.poster_path = poster_path;
+        this.video = video;
 
     }
 
@@ -22,27 +22,27 @@ public class CategoryItem {
         this.id = id;
     }
 
-    public String getMovieName() {
-        return movieName;
+    public String getOriginal_title() {
+        return original_title;
     }
 
-    public void setMovieName(String movieName) {
-        this.movieName = movieName;
+    public void setOriginal_title(String original_title) {
+        this.original_title = original_title;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getPoster_path() {
+        return poster_path;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setPoster_path(String poster_path) {
+        this.poster_path = poster_path;
     }
 
-    public String getFileUrl() {
-        return fileUrl;
+    public String getVideo() {
+        return video;
     }
 
-    public void setFileUrl(String fileUrl) {
-        this.fileUrl = fileUrl;
+    public void setVideo(String video) {
+        this.video = video;
     }
 }

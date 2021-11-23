@@ -62,6 +62,7 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     implementation 'com.google.android.exoplayer:exoplayer:2.9.6'
     implementation 'com.android.support:multidex:2.0.1'
@@ -72,4 +73,10 @@ dependencies {
 =======
     implementation 'com.google.android.exoplayer:exoplayer:2.9.6'
 >>>>>>> Initial commit
+=======
+
+    implementation 'com.google.android.exoplayer:exoplayer:2.9.6'
+    implementation 'com.android.support:multidex:2.0.1'
+
+>>>>>>> MA
 }

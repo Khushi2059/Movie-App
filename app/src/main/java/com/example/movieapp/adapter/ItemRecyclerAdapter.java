@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,11 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.movieapp.MovieDetails;
 import com.example.movieapp.R;
-import com.example.movieapp.model.AllCategory;
 import com.example.movieapp.model.CategoryItem;
 
 import java.util.List;
-import java.util.Locale;
 
 public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapter.ItemViewHolder> {
 Context context;
@@ -37,15 +34,15 @@ List<CategoryItem> categoryItemList;
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
-        Glide.with(context).load(categoryItemList.get(position).getImageUrl()).into(holder.itemImage);
+        Glide.with(context).load(categoryItemList.get(position).getPoster_path()).into(holder.itemImage);
    holder.itemImage.setOnClickListener(new View.OnClickListener() {
        @Override
        public void onClick(View view) {
            Intent i=new Intent(context, MovieDetails.class);
            i.putExtra("movieId",categoryItemList.get(position).getId());
-           i.putExtra("movieName",categoryItemList.get(position).getMovieName());
-           i.putExtra("movieImageUrl",categoryItemList.get(position).getImageUrl());
-           i.putExtra("movieFile",categoryItemList.get(position).getFileUrl());
+           i.putExtra("movieName",categoryItemList.get(position).getOriginal_title());
+           i.putExtra("movieImageUrl",categoryItemList.get(position).getPoster_path());
+           i.putExtra("movieFile",categoryItemList.get(position).getVideo());
            context.startActivity(i); }
    });
     }
