@@ -1,7 +1,6 @@
 package com.example.movieapp;
 
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -43,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager bannerMoviesViewPager;
     List<MovieModelClass> movieList;
     RecyclerView recyclerView;
-    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+    LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
     MainActivityViewModel mainActivityViewModel;
 
     @Override
@@ -52,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         init();
-        bannerMoviesPagesAdapter = new BannerMoviesPagesAdapter(this, new ArrayList<BannerMovies>());
-        bannerMoviesPagesAdapter2 = new BannerMoviesPagesAdapter2(this, new ArrayList<BannerMovies>());
-        bannerMoviesPagesAdapter3 = new BannerMoviesPagesAdapter3(this, new ArrayList<BannerMovies>());
-        bannerMoviesPagesAdapter4 = new BannerMoviesPagesAdapter4(this, new ArrayList<BannerMovies>());
-        Adapter adapter = new Adapter(this, new ArrayList<>());
+        bannerMoviesPagesAdapter=new BannerMoviesPagesAdapter(this,new ArrayList<BannerMovies>());
+        bannerMoviesPagesAdapter2= new BannerMoviesPagesAdapter2(this,new ArrayList<BannerMovies>());
+        bannerMoviesPagesAdapter3= new BannerMoviesPagesAdapter3(this,new ArrayList<BannerMovies>());
+        bannerMoviesPagesAdapter4= new BannerMoviesPagesAdapter4(this,new ArrayList<BannerMovies>());
+        Adapter adapter=new Adapter(this,new ArrayList<>());
 
         mainActivityViewModel.getBannerData(bannerMoviesPagesAdapter);
         mainActivityViewModel.getBannerData1(bannerMoviesPagesAdapter2);
@@ -64,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         mainActivityViewModel.getBannerData3(bannerMoviesPagesAdapter4);
 
 
-        MainActivityViewModel.GetData getData = new MainActivityViewModel.GetData(adapter, recyclerView, linearLayoutManager);
+        MainActivityViewModel.GetData getData=new MainActivityViewModel.GetData(adapter,recyclerView,linearLayoutManager);
         getData.execute();
 
         categoryTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -105,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
         sliderTimer.scheduleAtFixedRate(new AutoSlider(), 3000, 5000);
         indicator.setupWithViewPager(bannerMoviesViewPager);
     }
-
     private void setBannerMoviesPagerAdapter2(List<BannerMovies> bannerMoviesList) {
         bannerMoviesViewPager = findViewById(R.id.banner_viewPager);
         bannerMoviesViewPager.setAdapter(bannerMoviesPagesAdapter2);
@@ -114,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
         sliderTimer.scheduleAtFixedRate(new AutoSlider(), 3000, 5000);
         indicator.setupWithViewPager(bannerMoviesViewPager);
     }
-
     private void setBannerMoviesPagerAdapter3(List<BannerMovies> bannerMoviesList) {
         bannerMoviesViewPager = findViewById(R.id.banner_viewPager);
         bannerMoviesViewPager.setAdapter(bannerMoviesPagesAdapter3);
@@ -123,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
         sliderTimer.scheduleAtFixedRate(new AutoSlider(), 3000, 5000);
         indicator.setupWithViewPager(bannerMoviesViewPager);
     }
-
     private void setBannerMoviesPagerAdapter4(List<BannerMovies> bannerMoviesList) {
         bannerMoviesViewPager = findViewById(R.id.banner_viewPager);
         bannerMoviesViewPager.setAdapter(bannerMoviesPagesAdapter4);
@@ -132,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
         sliderTimer.scheduleAtFixedRate(new AutoSlider(), 3000, 5000);
         indicator.setupWithViewPager(bannerMoviesViewPager);
     }
-
     class AutoSlider extends TimerTask {
 
         @Override
@@ -142,8 +137,9 @@ public class MainActivity extends AppCompatActivity {
                 public void run() {
                     if (bannerMoviesViewPager.getCurrentItem() < homeBannerList.size() - 1) {
                         bannerMoviesViewPager.setCurrentItem(bannerMoviesViewPager.getCurrentItem() + 1);
-                    } else {
-                        bannerMoviesViewPager.setCurrentItem(bannerMoviesViewPager.getCurrentItem() + 1);
+                    }
+                    else {
+                        bannerMoviesViewPager.setCurrentItem(bannerMoviesViewPager.getCurrentItem()+1);
                     }
                 }
             });
