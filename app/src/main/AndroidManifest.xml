@@ -12,19 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieApp" >
         <activity
-<<<<<<< HEAD
             android:name=".view.MainActivity"
             android:exported="true" >
-=======
-            android:name=".VideoPlayerActivity"
-            android:exported="true" />
-        <activity
-            android:name=".MovieDetails"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
->>>>>>> Initial commit
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
