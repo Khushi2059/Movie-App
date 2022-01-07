@@ -1,4 +1,4 @@
-package com.example.movieapp;
+package com.example.movieapp.data.api;
 
 import static com.example.movieapp.retrofit.ApiKey.apiKey;
 

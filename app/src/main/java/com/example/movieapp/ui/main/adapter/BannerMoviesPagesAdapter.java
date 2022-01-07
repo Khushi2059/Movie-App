@@ -1,4 +1,4 @@
-package com.example.movieapp.adapter;
+package com.example.movieapp.ui.main.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import com.bumptech.glide.Glide;
 import com.example.movieapp.R;
 import com.example.movieapp.model.BannerMovies;
-import com.example.movieapp.view.MovieDetails;
+import com.example.movieapp.ui.main.view.MovieDetails;
 
 import java.util.List;
 

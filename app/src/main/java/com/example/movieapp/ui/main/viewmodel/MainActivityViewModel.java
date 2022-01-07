@@ -1,4 +1,4 @@
-package com.example.movieapp.viewmodel;
+package com.example.movieapp.ui.main.viewmodel;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -6,11 +6,11 @@ import android.util.Log;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.movieapp.adapter.Adapter;
-import com.example.movieapp.adapter.BannerMoviesPagesAdapter;
-import com.example.movieapp.adapter.BannerMoviesPagesAdapter2;
-import com.example.movieapp.adapter.BannerMoviesPagesAdapter3;
-import com.example.movieapp.adapter.BannerMoviesPagesAdapter4;
+import com.example.movieapp.ui.main.adapter.Adapter;
+import com.example.movieapp.ui.main.adapter.BannerMoviesPagesAdapter;
+import com.example.movieapp.ui.main.adapter.BannerMoviesPagesAdapter2;
+import com.example.movieapp.ui.main.adapter.BannerMoviesPagesAdapter3;
+import com.example.movieapp.ui.main.adapter.BannerMoviesPagesAdapter4;
 import com.example.movieapp.model.BannerMovies;
 import com.example.movieapp.model.HomeResp;
 import com.example.movieapp.model.KidsResp;
