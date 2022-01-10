@@ -13,8 +13,8 @@ import com.example.movieapp.ui.main.adapter.BannerMoviesPagesAdapter;
 import com.example.movieapp.ui.main.adapter.BannerMoviesPagesAdapter2;
 import com.example.movieapp.ui.main.adapter.BannerMoviesPagesAdapter3;
 import com.example.movieapp.ui.main.adapter.BannerMoviesPagesAdapter4;
-import com.example.movieapp.model.BannerMovies;
-import com.example.movieapp.model.MovieModelClass;
+import com.example.movieapp.data.model.BannerMoviesData;
+import com.example.movieapp.data.model.MovieModelClass;
 import com.example.movieapp.ui.main.viewmodel.MainActivityViewModel;
 import com.google.android.material.tabs.TabLayout;
 
@@ -40,13 +40,13 @@ public class MainActivity extends AppCompatActivity {
     // TODO FIX the Name, make the variable private
     TabLayout indicator, categoryTab;
     // TODO make the variable private
-    List<BannerMovies> homeBannerList;
+    List<BannerMoviesData> homeBannerList;
     // TODO make the variable private
-    List<BannerMovies> tvShowBannerList;
+    List<BannerMoviesData> tvShowBannerList;
     // TODO make the variable private
-    List<BannerMovies> movieBannerList;
+    List<BannerMoviesData> movieBannerList;
     // TODO make the variable private
-    List<BannerMovies> kidsBannerList;
+    List<BannerMoviesData> kidsBannerList;
     // TODO make the variable private
     ViewPager bannerMoviesViewPager;
     // TODO make the variable private
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
 
     // TODO Please create a method and put all the common logics, Do not repeat any code
     // TODO we are not using bannerMoviesList, then why this variable you are passing
-    private void setBannerMoviesPagerAdapter(List<BannerMovies> bannerMoviesList) {
+    private void setBannerMoviesPagerAdapter(List<BannerMoviesData> bannerMoviesList) {
         bannerMoviesViewPager = findViewById(R.id.banner_viewPager);
         bannerMoviesViewPager.setAdapter(bannerMoviesPagesAdapter);
         indicator.setupWithViewPager(bannerMoviesViewPager);
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
     // TODO Please change the method name, setBannerMoviesPagerAdapter2 it is not easy to understand what is this
     // TODO we are not using bannerMoviesList, then why this variable you are passing
-    private void setBannerMoviesPagerAdapter2(List<BannerMovies> bannerMoviesList) {
+    private void setBannerMoviesPagerAdapter2(List<BannerMoviesData> bannerMoviesList) {
         bannerMoviesViewPager = findViewById(R.id.banner_viewPager);
         bannerMoviesViewPager.setAdapter(bannerMoviesPagesAdapter2);
         indicator.setupWithViewPager(bannerMoviesViewPager);
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
     // TODO Please change the method name, setBannerMoviesPagerAdapter3 it is not easy to understand what is this
     // TODO we are not using bannerMoviesList, then why this variable you are passing
-    private void setBannerMoviesPagerAdapter3(List<BannerMovies> bannerMoviesList) {
+    private void setBannerMoviesPagerAdapter3(List<BannerMoviesData> bannerMoviesList) {
         bannerMoviesViewPager = findViewById(R.id.banner_viewPager);
         bannerMoviesViewPager.setAdapter(bannerMoviesPagesAdapter3);
         indicator.setupWithViewPager(bannerMoviesViewPager);
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
 
     // TODO Please change the method name, setBannerMoviesPagerAdapter4 it is not easy to understand what is this
     // TODO we are not using bannerMoviesList, then why this variable you are passing
-    private void setBannerMoviesPagerAdapter4(List<BannerMovies> bannerMoviesList) {
+    private void setBannerMoviesPagerAdapter4(List<BannerMoviesData> bannerMoviesList) {
         bannerMoviesViewPager = findViewById(R.id.banner_viewPager);
         bannerMoviesViewPager.setAdapter(bannerMoviesPagesAdapter4);
         indicator.setupWithViewPager(bannerMoviesViewPager);

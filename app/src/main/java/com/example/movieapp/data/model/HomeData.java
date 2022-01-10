@@ -1,17 +1,14 @@
-package com.example.movieapp.model;
-
-import com.example.movieapp.model.BannerMovies;
+package com.example.movieapp.data.model;
 
 import java.util.List;
 
-public class TvResp {
+public class HomeData {
+    private Integer page;
+    private List<BannerMoviesData> results;
+    private Integer total_pages;
+    private Integer total_results;
 
-    Integer page;
-    List<BannerMovies> results;
-    Integer total_pages;
-    Integer total_results;
-
-    public TvResp(Integer page, List<BannerMovies> moviesList, Integer total_pages, Integer total_results) {
+    public HomeData(Integer page, List<BannerMoviesData> moviesList, Integer total_pages, Integer total_results) {
         this.page = page;
         this.results = moviesList;
         this.total_pages = total_pages;
@@ -26,11 +23,11 @@ public class TvResp {
         this.page = page;
     }
 
-    public List<BannerMovies> getMoviesList() {
+    public List<BannerMoviesData> getMoviesList() {
         return results;
     }
 
-    public void setMoviesList(List<BannerMovies> moviesList) {
+    public void setMoviesList(List<BannerMoviesData> moviesList) {
         this.results = moviesList;
     }
 

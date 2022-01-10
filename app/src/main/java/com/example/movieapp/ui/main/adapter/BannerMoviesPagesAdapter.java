@@ -12,21 +12,21 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
 import com.example.movieapp.R;
-import com.example.movieapp.model.BannerMovies;
+import com.example.movieapp.data.model.BannerMoviesData;
 import com.example.movieapp.ui.main.view.MovieDetails;
 
 import java.util.List;
 
 public class BannerMoviesPagesAdapter extends PagerAdapter {
     Context context;
-    List<BannerMovies> kidsBannerList;
+    List<BannerMoviesData> kidsBannerList;
 
-    public BannerMoviesPagesAdapter(Context context, List<BannerMovies> bannerMoviesList) {
+    public BannerMoviesPagesAdapter(Context context, List<BannerMoviesData> bannerMoviesList) {
         this.context= context;
         this.kidsBannerList = bannerMoviesList;
     }
 
-    public void setKidsBannerList(List<BannerMovies> kidsBannerList) {
+    public void setKidsBannerList(List<BannerMoviesData> kidsBannerList) {
         this.kidsBannerList = kidsBannerList;
         notifyDataSetChanged();
     }

@@ -1,14 +1,14 @@
-package com.example.movieapp.model;
+package com.example.movieapp.data.model;
 
 import java.util.List;
-import java.util.Locale;
 
-public class AllCategory {
-    String categoryTitle;
-    Integer categoryId;
-    private  List<CategoryItem> categoryItemList=null;
+public class CategoryData {
 
-    public AllCategory(Integer categoryId,String categoryTitle, List<CategoryItem> categoryItemList) {
+    private String categoryTitle;
+    private Integer categoryId;
+    private List<CategoryItem> categoryItemList;
+
+    public CategoryData(Integer categoryId, String categoryTitle, List<CategoryItem> categoryItemList) {
         this.categoryId = categoryId;
         this.categoryTitle = categoryTitle;
         this.categoryItemList = categoryItemList;
@@ -23,11 +23,13 @@ public class AllCategory {
     }
 
     public String getCategoryTitle() {
-        return categoryTitle;}
+        return categoryTitle;
+    }
 
     public void setCategoryTitle(String categoryTitle) {
         this.categoryTitle = categoryTitle;
     }
+
     public Integer getCategoryId() {
         return categoryId;
     }
@@ -35,8 +37,6 @@ public class AllCategory {
     public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
     }
-
-
-    }
+}
 
 

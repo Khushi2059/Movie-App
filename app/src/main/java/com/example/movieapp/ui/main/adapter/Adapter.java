@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.movieapp.R;
-import com.example.movieapp.model.MovieModelClass;
+import com.example.movieapp.data.model.MovieModelClass;
 import com.example.movieapp.ui.main.view.MovieDetails;
 
 import java.util.List;
