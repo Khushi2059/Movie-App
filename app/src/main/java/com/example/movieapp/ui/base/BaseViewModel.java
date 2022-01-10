@@ -1,4 +1,6 @@
 package com.example.movieapp.ui.base;
 
-public class BaseViewModel {
+import androidx.lifecycle.ViewModel;
+
+public class BaseViewModel extends ViewModel {
 }

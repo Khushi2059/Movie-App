@@ -3,6 +3,7 @@ package com.example.movieapp.ui.main.view;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -15,6 +16,7 @@ import com.example.movieapp.ui.main.adapter.BannerMoviesPagesAdapter3;
 import com.example.movieapp.ui.main.adapter.BannerMoviesPagesAdapter4;
 import com.example.movieapp.data.model.BannerMoviesData;
 import com.example.movieapp.data.model.MovieModelClass;
+import com.example.movieapp.ui.main.viewmodel.HomeViewModel;
 import com.example.movieapp.ui.main.viewmodel.MainActivityViewModel;
 import com.google.android.material.tabs.TabLayout;
 
@@ -57,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
     // TODO make the variable private
     MainActivityViewModel mainActivityViewModel;
+
+    // My Code
+    private HomeViewModel homeViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -190,5 +195,7 @@ public class MainActivity extends AppCompatActivity {
         movieList = new ArrayList<>();
         // TODO  This is not they way of creating viewModel class, Please check the documentation why and how to initialize viewModel
         mainActivityViewModel = new MainActivityViewModel();
+        // My Code
+        homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
     }
 }
