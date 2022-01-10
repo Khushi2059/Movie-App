@@ -1,8 +1,10 @@
 package com.example.movieapp.ui.main.view;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -197,5 +199,33 @@ public class MainActivity extends AppCompatActivity {
         mainActivityViewModel = new MainActivityViewModel();
         // My Code
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        initHomeBanners();
+        initTvShowsBanners();
+        initMoviesBanners();
+        initKidsBanners();
+    }
+
+    private void initHomeBanners() {
+        homeViewModel.getHomeData().observe(this, bannerMoviesData -> {
+
+        });
+    }
+
+    private void initTvShowsBanners() {
+        homeViewModel.getTvShowsData().observe(this, bannerMoviesData -> {
+
+        });
+    }
+
+    private void initMoviesBanners() {
+        homeViewModel.getMoviesData().observe(this, bannerMoviesData -> {
+
+        });
+    }
+
+    private void initKidsBanners() {
+        homeViewModel.getKidsData().observe(this, bannerMoviesData -> {
+
+        });
     }
 }

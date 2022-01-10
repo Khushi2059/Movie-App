@@ -3,23 +3,30 @@ package com.example.movieapp.ui.main.viewmodel;
 import androidx.lifecycle.LiveData;
 
 import com.example.movieapp.data.model.BannerMoviesData;
+import com.example.movieapp.data.repository.home.HomeRepositoryImpl;
 import com.example.movieapp.ui.base.BaseViewModel;
 
 public class HomeViewModel extends BaseViewModel {
 
-    private LiveData<BannerMoviesData> getHomeData() {
-        return null;
+    private HomeRepositoryImpl homeRepository;
+
+    public HomeViewModel() {
+        homeRepository = new HomeRepositoryImpl();
     }
 
-    private LiveData<BannerMoviesData> getTvShowsData() {
-        return null;
+    public LiveData<BannerMoviesData> getHomeData() {
+        return homeRepository.getHomeCategoryData();
     }
 
-    private LiveData<BannerMoviesData> getMoviesData() {
-        return null;
+    public LiveData<BannerMoviesData> getTvShowsData() {
+        return homeRepository.getTvShowsCategoryData();
     }
 
-    private LiveData<BannerMoviesData> getKidsData() {
-        return null;
+    public LiveData<BannerMoviesData> getMoviesData() {
+        return homeRepository.getMoviesCategoryData();
+    }
+
+    public LiveData<BannerMoviesData> getKidsData() {
+        return homeRepository.getKidsCategoryData();
     }
 }
