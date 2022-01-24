@@ -19,8 +19,6 @@ import com.google.android.exoplayer2.util.Util;
 public class VideoPlayerActivity extends AppCompatActivity {
     private PlayerView videoPlayer;
     private SimpleExoPlayer simpleExoPlayer;
-    // TODO if you are not using this string, please remove
-    private static final String FILE_URL = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
