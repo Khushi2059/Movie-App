@@ -63,12 +63,12 @@ public abstract class NetworkBoundResource<ResultType, RequestType> implements O
 
     @MainThread
     private void saveResultAndReInit(RequestType response) {
-//        new ApiCallCompleteTask<>(this, response).execute();
+        new ApiCallCompleteTask<>(this, response).execute();
     }
 
     private void parseFailedApiCall(Call<RequestType> call, Response<RequestType> response, Throwable throwable, LiveData<ResultType> liveData) {
         if (!call.isCanceled()) {
-//            new ApiCallFailedTask<>(throwable, call, response, this, liveData).execute();
+            new ApiCallFailedTask<>(throwable, call, response, this, liveData).execute();
         }
     }
 

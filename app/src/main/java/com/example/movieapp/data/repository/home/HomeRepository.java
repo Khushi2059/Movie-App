@@ -2,6 +2,7 @@ package com.example.movieapp.data.repository.home;
 
 import androidx.lifecycle.LiveData;
 
+import com.example.movieapp.data.api.Resource;
 import com.example.movieapp.data.model.PopularMoviesData;
 import com.example.movieapp.data.model.PopularTvShowsData;
 import com.example.movieapp.data.model.TopRatedMoviesData;
@@ -10,13 +11,13 @@ import com.example.movieapp.data.model.UpComingMoviesData;
 
 public interface HomeRepository {
 
-    LiveData<PopularMoviesData> getPopularMoviesData();
+    LiveData<Resource<PopularMoviesData>> getPopularMoviesData();
 
-    LiveData<TopRatedMoviesData> getTopRatedMoviesData();
+    LiveData<Resource<TopRatedMoviesData>> getTopRatedMoviesData();
 
-    LiveData<PopularTvShowsData> getPopularTvShowsData();
+    LiveData<Resource<PopularTvShowsData>> getPopularTvShowsData();
 
-    LiveData<TopRatedTvShowsData> getTopRatedTvShowsData();
+    LiveData<Resource<TopRatedTvShowsData>> getTopRatedTvShowsData();
 
-    LiveData<UpComingMoviesData> getUpComingMoviesData();
+    LiveData<Resource<UpComingMoviesData>> getUpComingMoviesData();
 }
