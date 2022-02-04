@@ -1,6 +1,0 @@
-package com.example.movieapp.data.api;
-
-public class ApiKey {
-
-    static public final String apiKey = "232be951f20b306084f1a1bcc66a1081";
-}
