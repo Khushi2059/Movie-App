@@ -6,19 +6,19 @@ public class CategoryData {
 
     private String categoryTitle;
     private Integer categoryId;
-    private List<CategoryItem> categoryItemList;
+    private List<CategoryItemData> categoryItemList;
 
-    public CategoryData(Integer categoryId, String categoryTitle, List<CategoryItem> categoryItemList) {
+    public CategoryData(Integer categoryId, String categoryTitle, List<CategoryItemData> categoryItemList) {
         this.categoryId = categoryId;
         this.categoryTitle = categoryTitle;
         this.categoryItemList = categoryItemList;
     }
 
-    public List<CategoryItem> getCategoryItemList() {
+    public List<CategoryItemData> getCategoryItemList() {
         return categoryItemList;
     }
 
-    public void setCategoryItemList(List<CategoryItem> categoryItemList) {
+    public void setCategoryItemList(List<CategoryItemData> categoryItemList) {
         this.categoryItemList = categoryItemList;
     }
 

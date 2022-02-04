@@ -12,21 +12,21 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
 import com.example.movieapp.R;
-import com.example.movieapp.data.model.BannerMoviesData;
+import com.example.movieapp.data.model.MovieData;
 import com.example.movieapp.ui.main.view.MovieDetailsActivity;
 
 import java.util.List;
 
 public class TvPageAdapter extends PagerAdapter {
     Context context;
-    List<BannerMoviesData> tvShowBannerList;
+    List<MovieData> tvShowBannerList;
 
-    public TvPageAdapter(Context context, List<BannerMoviesData> bannerMoviesList) {
-        this.context= context;
+    public TvPageAdapter(Context context, List<MovieData> bannerMoviesList) {
+        this.context = context;
         this.tvShowBannerList = bannerMoviesList;
     }
 
-    public void setTvPageAdapter(List<BannerMoviesData> bannerMoviesList) {
+    public void setTvPageAdapter(List<MovieData> bannerMoviesList) {
         this.tvShowBannerList = bannerMoviesList;
         notifyDataSetChanged();
     }
@@ -49,16 +49,16 @@ public class TvPageAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        View view= LayoutInflater.from(context).inflate(R.layout.banner_movie_layout,null);
-        final ImageView bannerImage=view.findViewById(R.id.banner_image);
+        View view = LayoutInflater.from(context).inflate(R.layout.banner_movie_layout, null);
+        final ImageView bannerImage = view.findViewById(R.id.banner_image);
         Glide.with(context).load("https://image.tmdb.org/t/p/original" + tvShowBannerList.get(position).getPoster_path()).into(bannerImage);
         container.addView(view);
 
         bannerImage.setOnClickListener(view1 -> {
-            Intent i=new Intent(context, MovieDetailsActivity.class);
+            Intent i = new Intent(context, MovieDetailsActivity.class);
             i.putExtra("id", tvShowBannerList.get(position).getId());
             i.putExtra("original_name", tvShowBannerList.get(position).getOriginal_title());
-            i.putExtra("poster_path","https://image.tmdb.org/t/p/original"+ tvShowBannerList.get(position).getPoster_path());
+            i.putExtra("poster_path", "https://image.tmdb.org/t/p/original" + tvShowBannerList.get(position).getPoster_path());
             i.putExtra("movieFile", tvShowBannerList.get(position).getVideo());
             context.startActivity(i);
         });

@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.movieapp.R;
 import com.example.movieapp.data.model.CategoryData;
-import com.example.movieapp.data.model.CategoryItem;
+import com.example.movieapp.data.model.CategoryItemData;
 
 import java.util.List;
 
@@ -54,7 +54,7 @@ public class MainRecyclerAdapter extends RecyclerView.Adapter<MainRecyclerAdapte
         }
     }
 
-    private void setItemRecycler(RecyclerView recyclerView, List<CategoryItem> categoryItemList) {
+    private void setItemRecycler(RecyclerView recyclerView, List<CategoryItemData> categoryItemList) {
         ItemRecyclerAdapter itemRecyclerAdapter = new ItemRecyclerAdapter(context, categoryItemList);
         recyclerView.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
         recyclerView.setAdapter(itemRecyclerAdapter);

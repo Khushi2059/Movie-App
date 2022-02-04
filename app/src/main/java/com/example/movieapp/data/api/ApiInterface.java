@@ -2,11 +2,11 @@ package com.example.movieapp.data.api;
 
 import static com.example.movieapp.data.api.ApiKey.apiKey;
 
-import com.example.movieapp.data.model.HomeData;
-import com.example.movieapp.data.model.KidsData;
-import com.example.movieapp.data.model.MovieResp;
-import com.example.movieapp.data.model.TvResp;
-import com.example.movieapp.model.MainRecyclerRepo;
+import com.example.movieapp.data.model.TopRatedMoviesData;
+import com.example.movieapp.data.model.TopRatedTvShowsData;
+import com.example.movieapp.data.model.PopularMoviesData;
+import com.example.movieapp.data.model.PopularTvShowsData;
+import com.example.movieapp.data.model.UpComingMoviesData;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -14,17 +14,17 @@ import retrofit2.http.GET;
 public interface ApiInterface {
 
     @GET("movie/popular?api_key=" + apiKey)
-    Observable<MovieResp> getMovieResp();
+    Observable<PopularMoviesData> getPopularMovies();
 
     @GET("movie/top_rated?api_key=" + apiKey)
-    Observable<HomeData> getHomeResp();
+    Observable<TopRatedMoviesData> getTopRatedMovies();
 
     @GET("tv/popular?api_key=" + apiKey)
-    Observable<TvResp> getTvResp();
+    Observable<PopularTvShowsData> getPopularTvShows();
 
     @GET("tv/top_rated?api_key=" + apiKey)
-    Observable<KidsData> getWatchNext();
+    Observable<TopRatedTvShowsData> getTopRatedTvShows();
 
     @GET("movie/upcoming?api_key=" + apiKey)
-    Observable<MainRecyclerRepo> geImgData();
+    Observable<UpComingMoviesData> getUpComingMovies();
 }

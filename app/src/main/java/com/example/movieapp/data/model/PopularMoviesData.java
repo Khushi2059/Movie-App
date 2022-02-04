@@ -2,14 +2,14 @@ package com.example.movieapp.data.model;
 
 import java.util.List;
 
-public class MovieResp {
+public class PopularMoviesData {
 
     private Integer page;
-    private List<BannerMoviesData> results;
+    private List<MovieData> results;
     private Integer total_pages;
     private Integer total_results;
 
-    public MovieResp(Integer page, List<BannerMoviesData> moviesList, Integer total_pages, Integer total_results) {
+    public PopularMoviesData(Integer page, List<MovieData> moviesList, Integer total_pages, Integer total_results) {
         this.page = page;
         this.results = moviesList;
         this.total_pages = total_pages;
@@ -24,11 +24,11 @@ public class MovieResp {
         this.page = page;
     }
 
-    public List<BannerMoviesData> getMoviesList() {
+    public List<MovieData> getMoviesList() {
         return results;
     }
 
-    public void setMoviesList(List<BannerMoviesData> moviesList) {
+    public void setMoviesList(List<MovieData> moviesList) {
         this.results = moviesList;
     }
 

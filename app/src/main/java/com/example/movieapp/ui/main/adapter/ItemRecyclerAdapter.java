@@ -12,21 +12,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.movieapp.R;
-import com.example.movieapp.data.model.CategoryItem;
+import com.example.movieapp.data.model.CategoryItemData;
 import com.example.movieapp.ui.main.view.MovieDetailsActivity;
 
 import java.util.List;
 
 public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapter.ItemViewHolder> {
     Context context;
-    List<CategoryItem> categoryItemList;
+    List<CategoryItemData> categoryItemList;
 
-    public ItemRecyclerAdapter(Context context, List<CategoryItem> categoryItemList) {
+    public ItemRecyclerAdapter(Context context, List<CategoryItemData> categoryItemList) {
         this.context = context;
         this.categoryItemList = categoryItemList;
     }
 
-    public void setAdapter(List<CategoryItem> categoryItemList) {
+    public void setAdapter(List<CategoryItemData> categoryItemList) {
         this.categoryItemList = categoryItemList;
         notifyDataSetChanged();
     }

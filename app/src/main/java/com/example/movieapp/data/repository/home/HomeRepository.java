@@ -2,15 +2,21 @@ package com.example.movieapp.data.repository.home;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.movieapp.data.model.BannerMoviesData;
+import com.example.movieapp.data.model.PopularMoviesData;
+import com.example.movieapp.data.model.PopularTvShowsData;
+import com.example.movieapp.data.model.TopRatedMoviesData;
+import com.example.movieapp.data.model.TopRatedTvShowsData;
+import com.example.movieapp.data.model.UpComingMoviesData;
 
 public interface HomeRepository {
 
-    LiveData<BannerMoviesData> getHomeCategoryData();
+    LiveData<PopularMoviesData> getPopularMoviesData();
 
-    LiveData<BannerMoviesData> getTvShowsCategoryData();
+    LiveData<TopRatedMoviesData> getTopRatedMoviesData();
 
-    LiveData<BannerMoviesData> getMoviesCategoryData();
+    LiveData<PopularTvShowsData> getPopularTvShowsData();
 
-    LiveData<BannerMoviesData> getKidsCategoryData();
+    LiveData<TopRatedTvShowsData> getTopRatedTvShowsData();
+
+    LiveData<UpComingMoviesData> getUpComingMoviesData();
 }
