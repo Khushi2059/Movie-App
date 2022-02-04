@@ -4,8 +4,9 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
 
 import com.example.movieapp.data.model.BannerMoviesData;
+import com.example.movieapp.data.repository.base.BaseRepositoryImpl;
 
-public class HomeRepositoryImpl implements HomeRepository {
+public class HomeRepositoryImpl extends BaseRepositoryImpl implements HomeRepository {
 
     @Override
     public LiveData<BannerMoviesData> getHomeCategoryData() {

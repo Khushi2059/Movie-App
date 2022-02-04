@@ -8,7 +8,7 @@ import com.example.movieapp.ui.base.BaseViewModel;
 
 public class HomeViewModel extends BaseViewModel {
 
-    private HomeRepositoryImpl homeRepository;
+    private final HomeRepositoryImpl homeRepository;
 
     public HomeViewModel() {
         homeRepository = new HomeRepositoryImpl();

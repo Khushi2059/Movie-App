@@ -1,4 +1,6 @@
 package com.example.movieapp.data.repository.base;
 
-public class BaseRepository {
+public interface BaseRepository {
+
+    <T> T getService(Class<T> service, String baseUrl);
 }
