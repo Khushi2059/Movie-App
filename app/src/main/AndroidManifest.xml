@@ -11,11 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieApp">
+
         <activity
             android:name=".ui.base.BaseActivity"
             android:exported="false" />
+
         <activity
-            android:name=".ui.main.view.MainActivity"
+            android:name=".ui.main.view.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,9 +25,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".ui.main.view.MovieDetails"
+            android:name=".ui.main.view.MovieDetailsActivity"
             android:exported="true" />
+
         <activity
             android:name=".ui.main.view.VideoPlayerActivity"
             android:exported="true" />

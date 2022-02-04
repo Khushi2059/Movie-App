@@ -13,20 +13,20 @@ import androidx.viewpager.widget.PagerAdapter;
 import com.bumptech.glide.Glide;
 import com.example.movieapp.R;
 import com.example.movieapp.data.model.BannerMoviesData;
-import com.example.movieapp.ui.main.view.MovieDetails;
+import com.example.movieapp.ui.main.view.MovieDetailsActivity;
 
 import java.util.List;
 
-public class BannerMoviesPagesAdapter extends PagerAdapter {
+public class KidsPageAdapter extends PagerAdapter {
     Context context;
     List<BannerMoviesData> kidsBannerList;
 
-    public BannerMoviesPagesAdapter(Context context, List<BannerMoviesData> bannerMoviesList) {
+    public KidsPageAdapter(Context context, List<BannerMoviesData> bannerMoviesList) {
         this.context= context;
         this.kidsBannerList = bannerMoviesList;
     }
 
-    public void setKidsBannerList(List<BannerMoviesData> kidsBannerList) {
+    public void setKidsPageAdapter(List<BannerMoviesData> kidsBannerList) {
         this.kidsBannerList = kidsBannerList;
         notifyDataSetChanged();
     }
@@ -57,7 +57,7 @@ public class BannerMoviesPagesAdapter extends PagerAdapter {
         bannerImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(context, MovieDetails.class);
+                Intent i=new Intent(context, MovieDetailsActivity.class);
                 i.putExtra("id", kidsBannerList.get(position).getId());
                 i.putExtra("original_name", kidsBannerList.get(position).getOriginal_title());
                 i.putExtra("poster_path","https://image.tmdb.org/t/p/original"+ kidsBannerList.get(position).getPoster_path());

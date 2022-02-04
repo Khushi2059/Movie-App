@@ -6,6 +6,7 @@ import com.example.movieapp.data.model.HomeData;
 import com.example.movieapp.data.model.KidsData;
 import com.example.movieapp.data.model.MovieResp;
 import com.example.movieapp.data.model.TvResp;
+import com.example.movieapp.model.MainRecyclerRepo;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -23,4 +24,7 @@ public interface ApiInterface {
 
     @GET("tv/top_rated?api_key=" + apiKey)
     Observable<KidsData> getWatchNext();
+
+    @GET("movie/upcoming?api_key=" + apiKey)
+    Observable<MainRecyclerRepo> geImgData();
 }

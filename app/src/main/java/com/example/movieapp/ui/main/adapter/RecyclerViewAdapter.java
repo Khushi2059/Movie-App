@@ -13,15 +13,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.movieapp.R;
 import com.example.movieapp.data.model.MovieModelClass;
-import com.example.movieapp.ui.main.view.MovieDetails;
+import com.example.movieapp.ui.main.view.MovieDetailsActivity;
 
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
     public final Context mcontext;
     private List<MovieModelClass> mData;
 
-    public Adapter(Context mcontext, List<MovieModelClass> mData) {
+    public RecyclerViewAdapter(Context mcontext, List<MovieModelClass> mData) {
         this.mcontext = mcontext;
         this.mData = mData;
     }
@@ -43,17 +43,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Glide.with(mcontext)
-                .load("https://image.tmdb.org/t/p/original" + mData.get(position).getPoster_path())
+                .load("https://image.tmdb.org/t/p/original" + mData.get(holder.getAdapterPosition()).getPoster_path())
                 .into(holder.poster_path);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(mcontext, MovieDetails.class);
-                i.putExtra("id", mData.get(position).getId());
-                i.putExtra("original_name", mData.get(position).getOriginal_title());
-                i.putExtra("poster_path", "https://image.tmdb.org/t/p/original" + mData.get(position).getPoster_path());
-                i.putExtra("movieFile", mData.get(position).getVideo());
+                Intent i = new Intent(mcontext, MovieDetailsActivity.class);
+                i.putExtra("id", mData.get(holder.getAdapterPosition()).getId());
+                i.putExtra("original_name", mData.get(holder.getAdapterPosition()).getOriginal_title());
+                i.putExtra("poster_path", "https://image.tmdb.org/t/p/original" + mData.get(holder.getAdapterPosition()).getPoster_path());
+                i.putExtra("movieFile", mData.get(holder.getAdapterPosition()).getVideo());
                 mcontext.startActivity(i);
             }
         });

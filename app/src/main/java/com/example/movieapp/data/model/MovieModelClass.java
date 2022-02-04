@@ -1,6 +1,6 @@
 package com.example.movieapp.data.model;
 
-public class MovieModelClass {
+public class  MovieModelClass {
 
     private String id;
     private String original_title;
