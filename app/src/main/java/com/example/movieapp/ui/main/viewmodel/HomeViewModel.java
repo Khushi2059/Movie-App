@@ -38,7 +38,7 @@ public class HomeViewModel extends BaseViewModel {
                 .subscribeWith(new DisposableObserver<PopularMoviesData>() {
                     @Override
                     public void onNext(PopularMoviesData moviesResp) {
-                        data.setValue(moviesResp.getMoviesList());
+                        data.postValue(moviesResp.getMoviesList());
                     }
 
                     @Override
@@ -63,7 +63,7 @@ public class HomeViewModel extends BaseViewModel {
                 .subscribeWith(new DisposableObserver<TopRatedMoviesData>() {
                     @Override
                     public void onNext(TopRatedMoviesData homeResp) {
-                        data.setValue(homeResp.getMoviesList());
+                        data.postValue(homeResp.getMoviesList());
                     }
 
                     @Override
@@ -87,7 +87,7 @@ public class HomeViewModel extends BaseViewModel {
                 .subscribeWith(new DisposableObserver<PopularTvShowsData>() {
                     @Override
                     public void onNext(PopularTvShowsData tvResp) {
-                        data.setValue(tvResp.getMoviesList());
+                        data.postValue(tvResp.getMoviesList());
                     }
 
                     @Override
@@ -112,7 +112,7 @@ public class HomeViewModel extends BaseViewModel {
                 .subscribeWith(new DisposableObserver<TopRatedTvShowsData>() {
                     @Override
                     public void onNext(TopRatedTvShowsData kidsResp) {
-                        data.setValue(kidsResp.getMoviesList());
+                        data.postValue(kidsResp.getMoviesList());
                     }
 
                     @Override
@@ -139,7 +139,7 @@ public class HomeViewModel extends BaseViewModel {
                     @Override
                     public void onNext(UpComingMoviesData mainRecyclerRepo) {
                         Log.d("bannerData", mainRecyclerRepo.getMoviesList().toString());
-                        data.setValue(mainRecyclerRepo.getMoviesList());
+                        data.postValue(mainRecyclerRepo.getMoviesList());
                     }
 
                     @Override

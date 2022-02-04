@@ -15,7 +15,6 @@ import com.example.movieapp.ui.main.adapter.MoviesPageAdapter;
 import com.example.movieapp.ui.main.adapter.RecyclerViewAdapter;
 import com.example.movieapp.ui.main.adapter.TvPageAdapter;
 import com.example.movieapp.ui.main.viewmodel.HomeViewModel;
-import com.example.movieapp.ui.main.viewmodel.MainActivityViewModel;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -29,8 +28,6 @@ public class HomeActivity extends AppCompatActivity {
     private TvPageAdapter tvPageAdapter;
     private TabLayout indicator, categoryTab;
     private ViewPager bannerMoviesViewPager;
-    // TODO Need to delete
-    private MainActivityViewModel mainActivityViewModel;
     private RecyclerView mainRecycler;
     private HomeViewModel homeViewModel;
 
@@ -45,12 +42,6 @@ public class HomeActivity extends AppCompatActivity {
         moviesPageAdapter = new MoviesPageAdapter(this, new ArrayList<>());
         kidsPageAdapter = new KidsPageAdapter(this, new ArrayList<>());
         recyclerViewAdapter = new RecyclerViewAdapter(this, new ArrayList<>());
-        // TODO This is wrong way to get data from ViewModel
-        mainActivityViewModel.getBannerData(homePageAdapter);
-        mainActivityViewModel.getBannerData1(tvPageAdapter);
-        mainActivityViewModel.getBannerData2(moviesPageAdapter);
-        mainActivityViewModel.getBannerData3(kidsPageAdapter);
-        mainActivityViewModel.getBannerData4(recyclerViewAdapter);
 
         categoryTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -127,8 +118,6 @@ public class HomeActivity extends AppCompatActivity {
         indicator = findViewById(R.id.tab_indicator);
         categoryTab = findViewById(R.id.tabLayout);
         bannerMoviesViewPager = findViewById(R.id.banner_viewPager);
-        // TODO Need to delete
-        mainActivityViewModel = new MainActivityViewModel();
     }
 
     private void initViewModel() {
@@ -143,7 +132,7 @@ public class HomeActivity extends AppCompatActivity {
     private void initPopularMovies() {
         homeViewModel.getPopularMovies().observe(this, popularMoviesData -> {
             if (popularMoviesData != null) {
-
+                homePageAdapter.setHomePageAdapter(popularMoviesData);
             }
         });
     }
@@ -151,7 +140,7 @@ public class HomeActivity extends AppCompatActivity {
     private void initTopRatedMovies() {
         homeViewModel.getTopRatedMovies().observe(this, topRatedMoviesData -> {
             if (topRatedMoviesData != null) {
-
+                tvPageAdapter.setTvPageAdapter(topRatedMoviesData);
             }
         });
     }
@@ -159,7 +148,7 @@ public class HomeActivity extends AppCompatActivity {
     private void initPopularTvShows() {
         homeViewModel.getPopularTvShows().observe(this, popularTvShowsData -> {
             if (popularTvShowsData != null) {
-
+                moviesPageAdapter.setBannerMoviesList3(popularTvShowsData);
             }
         });
     }
@@ -167,7 +156,7 @@ public class HomeActivity extends AppCompatActivity {
     private void initTopRatedTvShows() {
         homeViewModel.getTopRatedTvShowsData().observe(this, topRatedTvShowsData -> {
             if (topRatedTvShowsData != null) {
-
+                kidsPageAdapter.setKidsPageAdapter(topRatedTvShowsData);
             }
         });
     }
@@ -175,7 +164,7 @@ public class HomeActivity extends AppCompatActivity {
     private void initUpComingMovies() {
         homeViewModel.getUpComingMoviesData().observe(this, upComingMoviesData -> {
             if (upComingMoviesData != null) {
-
+                recyclerViewAdapter.SetAdapter(upComingMoviesData);
             }
         });
     }
