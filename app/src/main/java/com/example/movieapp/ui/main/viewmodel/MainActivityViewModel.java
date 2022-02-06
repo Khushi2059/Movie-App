@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModel;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.movieapp.Repository;
 import com.example.movieapp.model.MainRecyclerRepo;
 import com.example.movieapp.model.MovieModelClass;
 import com.example.movieapp.ui.main.adapter.RecyclerViewAdapter;
@@ -27,11 +30,20 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
-public class MainActivityViewModel {
+public class MainActivityViewModel extends ViewModel {
+    private static final String TAG = "ViewModel";
+    private Repository repository;
+    private LiveData<List<BannerMovies>> MoviesList;
+
+
+    public MainActivityViewModel(Repository repository, LiveData<List<BannerMovies>> wishListMoviesList) {
+        this.repository = repository;
+       MoviesList = repository.getAllMovies();
+    }
 
     public void getBannerData(HomePageAdapter homePageAdapter){
         CompositeDisposable compositeDisposable=new CompositeDisposable();
-        compositeDisposable.add(RetrofitClient.getRetrofitClient().getMovieResp()
+        compositeDisposable.add(repository.getMovieResp()
                 .subscribeOn(Schedulers.io())
                 .subscribeWith(new DisposableObserver<MovieResp>() {
                     @Override
@@ -56,7 +68,7 @@ public class MainActivityViewModel {
     }
     public void getBannerData1(TvPageAdapter tvPageAdapter){
         CompositeDisposable compositeDisposable=new CompositeDisposable();
-        compositeDisposable.add(RetrofitClient.getRetrofitClient().getHomeResp()
+        compositeDisposable.add(repository.getHomeResp()
                 .subscribeOn(Schedulers.io())
                 .subscribeWith(new DisposableObserver<HomeResp>() {
                     @Override
@@ -81,12 +93,12 @@ public class MainActivityViewModel {
     }
     public void getBannerData2(MoviesPageAdapter moviesPageAdapter){
         CompositeDisposable compositeDisposable=new CompositeDisposable();
-        compositeDisposable.add(RetrofitClient.getRetrofitClient().getTvResp()
+        compositeDisposable.add(repository.getTvResp()
                 .subscribeOn(Schedulers.io())
                 .subscribeWith(new DisposableObserver<TvResp>() {
                     @Override
                     public void onNext(TvResp tvResp) {
-                        //  Log.d("bannerData", tvResp.getMoviesList().toString());
+                       // Log.d("bannerData", tvResp.getMoviesList().toString());
                         List<BannerMovies> tvShowBannerList = tvResp.getMoviesList();
                         moviesPageAdapter.setBannerMoviesList3(tvShowBannerList);
                     }
@@ -108,7 +120,7 @@ public class MainActivityViewModel {
 
     public void getBannerData3(KidsPageAdapter kidsPageAdapter){
         CompositeDisposable compositeDisposable=new CompositeDisposable();
-        compositeDisposable.add(RetrofitClient.getRetrofitClient().getWatchNext()
+        compositeDisposable.add(repository.getWatchNext()
                 .subscribeOn(Schedulers.io())
                 .subscribeWith(new DisposableObserver<KidsResp>() {
                     @Override
@@ -136,7 +148,7 @@ public class MainActivityViewModel {
     public void getBannerData4(RecyclerViewAdapter recyclerViewAdapter) {
 
         CompositeDisposable compositeDisposable=new CompositeDisposable();
-        compositeDisposable.add(RetrofitClient.getRetrofitClient().geImgData()
+        compositeDisposable.add(repository.geImgData()
                 .subscribeOn(Schedulers.io())
                 .subscribeWith(new DisposableObserver<MainRecyclerRepo>() {
 
@@ -161,5 +173,17 @@ public class MainActivityViewModel {
         );
     }
 
+    public LiveData<List<BannerMovies>> getAllMovies() {
+        return MoviesList;
+    }
+
+    public void deleteMovie(){
+        repository.deleteMovie();
+    }
+    public void insertMovie(BannerMovies bannerMovies){
+        Log.e(TAG, "insertMovie: " );
+        repository.insertMovie(bannerMovies);
+
+    }
 
 }

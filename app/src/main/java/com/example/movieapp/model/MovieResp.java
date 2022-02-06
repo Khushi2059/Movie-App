@@ -1,9 +1,11 @@
 package com.example.movieapp.model;
 
+import androidx.room.Entity;
+
 import com.example.movieapp.model.BannerMovies;
 
 import java.util.List;
-
+@Entity(tableName = "movie_table")
 public class MovieResp {
     Integer page;
     List<BannerMovies> results;

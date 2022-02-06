@@ -2,6 +2,8 @@ package com.example.movieapp.retrofit;
 
 import static com.example.movieapp.retrofit.ApiKey.apiKey;
 
+import android.widget.Adapter;
+
 import com.example.movieapp.model.HomeResp;
 import com.example.movieapp.model.KidsResp;
 import com.example.movieapp.model.MainRecyclerRepo;
@@ -15,6 +17,7 @@ import java.util.List;
 import io.reactivex.Observable;
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.QueryMap;
 
 public interface ApiInterface {
    @GET("movie/popular?api_key=" + apiKey)

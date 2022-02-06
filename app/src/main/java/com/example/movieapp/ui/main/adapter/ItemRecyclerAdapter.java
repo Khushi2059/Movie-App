@@ -1,5 +1,6 @@
 package com.example.movieapp.ui.main.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -37,7 +38,7 @@ List<CategoryItem> categoryItemList;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemViewHolder holder,int position) {
+    public void onBindViewHolder(@NonNull ItemViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Glide.with(context)
                 .load("https://image.tmdb.org/t/p/original" + categoryItemList.get(position).getPoster_path())
                 .into(holder.itemImage);

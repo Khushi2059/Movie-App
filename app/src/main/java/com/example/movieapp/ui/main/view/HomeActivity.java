@@ -3,24 +3,22 @@ package com.example.movieapp.ui.main.view;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.movieapp.MovieDataBase;
 import com.example.movieapp.R;
 import com.example.movieapp.ui.main.adapter.RecyclerViewAdapter;
 import com.example.movieapp.ui.main.adapter.KidsPageAdapter;
 import com.example.movieapp.ui.main.adapter.HomePageAdapter;
 import com.example.movieapp.ui.main.adapter.MoviesPageAdapter;
 import com.example.movieapp.ui.main.adapter.TvPageAdapter;
-import com.example.movieapp.model.BannerMovies;
 import com.example.movieapp.ui.main.viewmodel.MainActivityViewModel;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -33,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
     private ViewPager bannerMoviesViewPager;
     private MainActivityViewModel mainActivityViewModel;
     private RecyclerView mainRecycler;
+    private MovieDataBase database;
 
 
     @Override
@@ -40,6 +39,8 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+        mainActivityViewModel = new ViewModelProvider(HomeActivity.this).get(MainActivityViewModel.class);
+
         homePageAdapter = new HomePageAdapter(this, new ArrayList<>());
         tvPageAdapter = new TvPageAdapter(this, new ArrayList<>());
         moviesPageAdapter = new MoviesPageAdapter(this, new ArrayList<>());
@@ -52,6 +53,8 @@ public class HomeActivity extends AppCompatActivity {
         mainActivityViewModel.getBannerData2(moviesPageAdapter);
         mainActivityViewModel.getBannerData3(kidsPageAdapter);
         mainActivityViewModel.getBannerData4(recyclerViewAdapter);
+
+
 
         categoryTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -131,6 +134,7 @@ public class HomeActivity extends AppCompatActivity {
         categoryTab = findViewById(R.id.tabLayout);
         bannerMoviesViewPager = findViewById(R.id.banner_viewPager);
         // TODO  This is not they way of creating viewModel class, Please check the documentation why and how to initialize viewModel
-        mainActivityViewModel = new MainActivityViewModel();
     }
+
+
 }
