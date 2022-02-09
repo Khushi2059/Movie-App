@@ -3,34 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/brightness_seekbar.xml" value="0.25092592592592594" />
         <entry key="app/src/main/res/drawable/ic_baseline_play_arrow_24.xml" value="0.4041666666666667" />
-        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.4041666666666667" />
-        <entry key="app/src/main/res/drawable/play_btn_bg.xml" value="0.4041666666666667" />
-        <entry key="app/src/main/res/drawable/selected.xml" value="0.4041666666666667" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.33384615384615385" />
+        <entry key="app/src/main/res/drawable/indicator_selector.xml" value="0.1921875" />
+        <entry key="app/src/main/res/drawable/play_btn_bg.xml" value="0.11388888888888889" />
+        <entry key="app/src/main/res/drawable/selected.xml" value="0.33384615384615385" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.4041666666666667" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_movie_details.xml" value="0.18541666666666667" />
+        <entry key="app/src/main/res/drawable/unselected.xml" value="0.1921875" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/activity_movie_details.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_navigation_drawer.xml" value="0.3880208333333333" />
-        <entry key="app/src/main/res/layout/activity_video_player.xml" value="0.33177083333333335" />
+        <entry key="app/src/main/res/layout/activity_video_player.xml" value="0.25" />
         <entry key="app/src/main/res/layout/app_bar_navigation_drawer.xml" value="0.3880208333333333" />
-        <entry key="app/src/main/res/layout/banner_movie_layout.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/cat_recycler_row_item.xml" value="0.18541666666666667" />
+        <entry key="app/src/main/res/layout/banner_movie_layout.xml" value="0.22327898550724637" />
+        <entry key="app/src/main/res/layout/cat_recycler_row_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/content_navigation_drawer.xml" value="0.37395833333333334" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.3880208333333333" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3880208333333333" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.3880208333333333" />
         <entry key="app/src/main/res/layout/main.xml" value="0.3880208333333333" />
-        <entry key="app/src/main/res/layout/main_recycler_row_item.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.33384615384615385" />
-        <entry key="app/src/main/res/drawable/indicator_selector.xml" value="0.1921875" />
-        <entry key="app/src/main/res/drawable/play_btn_bg.xml" value="0.11388888888888889" />
-        <entry key="app/src/main/res/drawable/selected.xml" value="0.33384615384615385" />
-        <entry key="app/src/main/res/drawable/unselected.xml" value="0.1921875" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22327898550724637" />
-        <entry key="app/src/main/res/layout/activity_movie_details.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_video_player.xml" value="0.12409420289855072" />
-        <entry key="app/src/main/res/layout/banner_movie_layout.xml" value="0.22327898550724637" />
-        <entry key="app/src/main/res/layout/cat_recycler_row_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/main_recycler_row_item.xml" value="0.21105072463768115" />
       </map>
     </option>
