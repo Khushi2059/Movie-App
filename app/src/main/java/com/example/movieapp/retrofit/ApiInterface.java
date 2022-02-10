@@ -2,14 +2,22 @@ package com.example.movieapp.retrofit;
 
 import static com.example.movieapp.retrofit.ApiKey.apiKey;
 
+import android.widget.Adapter;
+
 import com.example.movieapp.model.HomeResp;
 import com.example.movieapp.model.KidsResp;
+import com.example.movieapp.model.MainRecyclerRepo;
+import com.example.movieapp.model.MovieModelClass;
 import com.example.movieapp.model.MovieResp;
 import com.example.movieapp.model.TvResp;
 
 
+import java.util.List;
+
 import io.reactivex.Observable;
+import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.QueryMap;
 
 public interface ApiInterface {
    @GET("movie/popular?api_key=" + apiKey)
@@ -23,5 +31,8 @@ public interface ApiInterface {
 
    @GET("tv/top_rated?api_key=" + apiKey)
    Observable<KidsResp> getWatchNext();
+
+   @GET("movie/upcoming?api_key=" + apiKey)
+   Observable<MainRecyclerRepo> geImgData();
 
 }

@@ -1,18 +1,13 @@
 package com.example.movieapp.model;
 
-import androidx.room.Entity;
-
-import com.example.movieapp.model.BannerMovies;
-
 import java.util.List;
-@Entity(tableName = "movie_table")
-public class MovieResp {
+
+public class MainRecyclerRepo {
     Integer page;
-    List<BannerMovies> results;
+    List<MovieModelClass> results;
     Integer total_pages;
     Integer total_results;
-
-    public MovieResp(Integer page, List<BannerMovies> moviesList, Integer total_pages, Integer total_results) {
+    public MainRecyclerRepo(Integer page, List<MovieModelClass> moviesList, Integer total_pages, Integer total_results) {
         this.page = page;
         this.results = moviesList;
         this.total_pages = total_pages;
@@ -27,11 +22,11 @@ public class MovieResp {
         this.page = page;
     }
 
-    public List<BannerMovies> getMoviesList() {
+    public List<MovieModelClass> getMoviesList() {
         return results;
     }
 
-    public void setMoviesList(List<BannerMovies> moviesList) {
+    public void setMoviesList(List<MovieModelClass> moviesList) {
         this.results = moviesList;
     }
 

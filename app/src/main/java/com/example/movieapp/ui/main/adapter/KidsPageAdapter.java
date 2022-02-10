@@ -1,4 +1,4 @@
-package com.example.movieapp.adapter;
+package com.example.movieapp.ui.main.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,27 +13,27 @@ import androidx.viewpager.widget.PagerAdapter;
 import com.bumptech.glide.Glide;
 import com.example.movieapp.R;
 import com.example.movieapp.model.BannerMovies;
-import com.example.movieapp.view.MovieDetails;
+import com.example.movieapp.ui.main.view.MovieDetailsActivity;
 
 import java.util.List;
 
-public class BannerMoviesPagesAdapter2 extends PagerAdapter {
+public class KidsPageAdapter extends PagerAdapter {
     Context context;
-    List<BannerMovies> homeBannerList;
+    List<BannerMovies> kidsBannerList;
 
-    public BannerMoviesPagesAdapter2(Context context, List<BannerMovies> homeBannerList) {
+    public KidsPageAdapter(Context context, List<BannerMovies> bannerMoviesList) {
         this.context= context;
-        this.homeBannerList = homeBannerList;
+        this.kidsBannerList = bannerMoviesList;
     }
 
-    public void setBannerMoviesList2(List<BannerMovies> homeBannerList) {
-        this.homeBannerList = homeBannerList;
+    public void setKidsPageAdapter(List<BannerMovies> kidsBannerList) {
+        this.kidsBannerList = kidsBannerList;
         notifyDataSetChanged();
     }
 
     @Override
     public int getCount() {
-        return homeBannerList.size();
+        return kidsBannerList.size();
     }
 
     @Override
@@ -51,21 +51,22 @@ public class BannerMoviesPagesAdapter2 extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         View view= LayoutInflater.from(context).inflate(R.layout.banner_movie_layout,null);
         final ImageView bannerImage=view.findViewById(R.id.banner_image);
-        Glide.with(context).load("https://image.tmdb.org/t/p/original" + homeBannerList.get(position).getPoster_path()).into(bannerImage);
+        Glide.with(context).load("https://image.tmdb.org/t/p/original" + kidsBannerList.get(position).getPoster_path()).into(bannerImage);
         container.addView(view);
 
         bannerImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(context, MovieDetails.class);
-                i.putExtra("id",homeBannerList.get(position).getId());
-                i.putExtra("original_name",homeBannerList.get(position).getOriginal_title());
-                i.putExtra("poster_path","https://image.tmdb.org/t/p/original"+homeBannerList.get(position).getPoster_path());
-                i.putExtra("movieFile",homeBannerList.get(position).getVideo());
+                Intent i=new Intent(context, MovieDetailsActivity.class);
+                i.putExtra("id", kidsBannerList.get(position).getId());
+                i.putExtra("original_name", kidsBannerList.get(position).getOriginal_title());
+                i.putExtra("poster_path","https://image.tmdb.org/t/p/original"+ kidsBannerList.get(position).getPoster_path());
+                i.putExtra("movieFile", kidsBannerList.get(position).getVideo());
                 context.startActivity(i);
             }
         });
 
         return view;
     }
+
 }

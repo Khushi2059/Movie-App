@@ -1,20 +1,23 @@
 package com.example.movieapp.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "movie_table")
 public class BannerMovies {
+    @PrimaryKey(autoGenerate = true)
     Integer id;
     String original_title;
     String poster_path;
     String video;
 
-
-    public BannerMovies(Integer id, String original_title, String poster_path, String video) {
+    public BannerMovies( Integer id, String original_title, String poster_path, String video) {
         this.id = id;
         this.original_title = original_title;
         this.poster_path = poster_path;
         this.video = video;
 
     }
-
     public Integer getId() {
         return id;
     }

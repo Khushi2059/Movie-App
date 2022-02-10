@@ -1,5 +1,6 @@
-package com.example.movieapp.adapter;
+package com.example.movieapp.ui.main.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -11,9 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.movieapp.MovieDetails;
 import com.example.movieapp.R;
 import com.example.movieapp.model.CategoryItem;
+import com.example.movieapp.ui.main.view.MovieDetailsActivity;
 
 import java.util.List;
 
@@ -25,6 +26,10 @@ List<CategoryItem> categoryItemList;
         this.context = context;
         this.categoryItemList = categoryItemList;
     }
+    public void setAdapter(List<CategoryItem> categoryItemList) {
+        this.categoryItemList = categoryItemList;
+        notifyDataSetChanged();
+    }
 
     @NonNull
     @Override
@@ -33,12 +38,15 @@ List<CategoryItem> categoryItemList;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
-        Glide.with(context).load(categoryItemList.get(position).getPoster_path()).into(holder.itemImage);
-   holder.itemImage.setOnClickListener(new View.OnClickListener() {
+    public void onBindViewHolder(@NonNull ItemViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        Glide.with(context)
+                .load("https://image.tmdb.org/t/p/original" + categoryItemList.get(position).getPoster_path())
+                .into(holder.itemImage);
+
+        holder.itemImage.setOnClickListener(new View.OnClickListener() {
        @Override
        public void onClick(View view) {
-           Intent i=new Intent(context, MovieDetails.class);
+           Intent i=new Intent(context, MovieDetailsActivity.class);
            i.putExtra("movieId",categoryItemList.get(position).getId());
            i.putExtra("movieName",categoryItemList.get(position).getOriginal_title());
            i.putExtra("movieImageUrl",categoryItemList.get(position).getPoster_path());
