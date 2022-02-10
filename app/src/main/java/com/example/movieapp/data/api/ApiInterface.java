@@ -1,27 +1,28 @@
 package com.example.movieapp.data.api;
 
-import static com.example.movieapp.retrofit.ApiKey.apiKey;
+import com.example.movieapp.data.model.PopularMoviesData;
+import com.example.movieapp.data.model.PopularTvShowsData;
+import com.example.movieapp.data.model.TopRatedMoviesData;
+import com.example.movieapp.data.model.TopRatedTvShowsData;
+import com.example.movieapp.data.model.UpComingMoviesData;
 
-import com.example.movieapp.model.HomeResp;
-import com.example.movieapp.model.KidsResp;
-import com.example.movieapp.model.MovieResp;
-import com.example.movieapp.model.TvResp;
-
-
-import io.reactivex.Observable;
+import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface ApiInterface {
 
-    @GET("movie/popular?api_key=" + apiKey)
-    Observable<MovieResp> getMovieResp();
+    @GET("movie/popular?")
+    Call<PopularMoviesData> getPopularMovies();
 
-    @GET("movie/top_rated?api_key=" + apiKey)
-    Observable<HomeResp> getHomeResp();
+    @GET("movie/top_rated?")
+    Call<TopRatedMoviesData> getTopRatedMovies();
 
-    @GET("tv/popular?api_key=" + apiKey)
-    Observable<TvResp> getTvResp();
+    @GET("tv/popular?")
+    Call<PopularTvShowsData> getPopularTvShows();
 
-    @GET("tv/top_rated?api_key=" + apiKey)
-    Observable<KidsResp> getWatchNext();
+    @GET("tv/top_rated?")
+    Call<TopRatedTvShowsData> getTopRatedTvShows();
+
+    @GET("movie/upcoming?")
+    Call<UpComingMoviesData> getUpComingMovies();
 }

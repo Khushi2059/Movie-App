@@ -12,21 +12,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.movieapp.R;
-import com.example.movieapp.model.MovieModelClass;
+import com.example.movieapp.data.model.MovieData;
 import com.example.movieapp.ui.main.view.MovieDetailsActivity;
 
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
     public final Context mcontext;
-    private List<MovieModelClass> mData;
+    private List<MovieData> mData;
 
-    public RecyclerViewAdapter(Context mcontext, List<MovieModelClass> mData) {
+    public RecyclerViewAdapter(Context mcontext, List<MovieData> mData) {
         this.mcontext = mcontext;
         this.mData = mData;
     }
 
-    public void SetAdapter(List<MovieModelClass> mData) {
+    public void SetAdapter(List<MovieData> mData) {
         this.mData = mData;
         notifyDataSetChanged();
     }

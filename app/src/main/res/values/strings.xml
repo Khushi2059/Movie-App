@@ -11,4 +11,8 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="request_successful">Request Successful</string>
+    <string name="loading">Loading&#8230;</string>
+    <string name="no_internet">No internet</string>
+    <string name="fetching">Fetching¬</string>
 </resources>

@@ -1,27 +1,24 @@
-package com.example.movieapp.model;
+package com.example.movieapp.data.model;
 
-public class  MovieModelClass {
+public class CategoryItemData {
 
-        String id;
-        String original_title;
-        String poster_path;
-        String video;
+    private Integer id;
+    private String original_title;
+    private String poster_path;
+    private String video;
 
-
-    public MovieModelClass() {
+    public CategoryItemData(Integer id, String original_title, String poster_path, String video) {
         this.id = id;
         this.original_title = original_title;
         this.poster_path = poster_path;
         this.video = video;
     }
 
-
-
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
